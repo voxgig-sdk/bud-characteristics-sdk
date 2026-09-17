@@ -1,0 +1,770 @@
+{
+ "openapi": "3.0.3",
+ "info": {
+  "title": "Characteristics API",
+  "version": "1.0.0",
+  "contact": {
+   "name": "API Support",
+   "url": "http://www.thisisbud.com/support",
+   "email": "contact@thisisbud.com"
+  },
+  "x-logo": {
+   "url": "data:image/png;base64,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"
+  },
+  "description": "\nThe Characteristics API provides endpoints for retrieving specific characteristics that apply to an individual\nCustomer based on their financial data. The currently supported characteristics are:\n\n| Characteristic | Description |\n|:---------------|:---------------------------------------------------------------------------------------------|\n| `credit_card`  | Customer has made credit card repayments                                                     |\n| `loan`         | Customer has made loan repayments (excluding credit cards)                                   |\n| `overdraft`    | Customer has paid overdraft fees                                                             |\n| `saver`        | Customer has savings transactions                                                            |\n\nNew characteristics will be released and added to this list without a breaking change notice.\n"
+ },
+ "servers": [
+  {
+   "url": "https://api-sandbox.thisisbud.com",
+   "description": "Bud sandbox"
+  }
+ ],
+ "paths": {
+  "/characteristics/v1/customer": {
+   "get": {
+    "tags": [
+     "Retrieve Customer Characteristics"
+    ],
+    "summary": "Retrieve Customer Characteristics",
+    "description": "Retrieves a collection of characteristics associated with an individual Customer. \nFor data on why an individual characteristic applies to a Customer, use the relevant detailed endpoint.\n\nThe currently supported characteristics are:\n\n| Characteristic | Description                                                |\n|:---------------|:-----------------------------------------------------------|\n| `credit_card`  | Customer has made credit card repayments                   |\n| `loan`         | Customer has made loan repayments (excluding credit cards) |\n| `overdraft`    | Customer has paid overdraft fees                           |\n| `saver`        | Customer has savings transactions                          |\n\nNew characteristics will be released and added to this list without a breaking change notice.\n",
+    "operationId": "characteristics_v1_customer_get",
+    "security": [
+     {
+      "OAuth2": []
+     }
+    ],
+    "parameters": [
+     {
+      "in": "header",
+      "name": "X-Client-Id",
+      "schema": {
+       "type": "string"
+      },
+      "required": true,
+      "description": "The API Client Identifier (Service Application Identifier).",
+      "example": "8711bbef-b357-4c2d-97ca-0d9df4206e9a"
+     },
+     {
+      "in": "header",
+      "name": "X-Customer-Id",
+      "schema": {
+       "type": "string",
+       "format": "uuid"
+      },
+      "required": true,
+      "description": "A unique identifier for a Customer, as registered on Bud's platform.",
+      "example": "c3339af9-2426-44d4-9c4d-ddb8fd281e23"
+     },
+     {
+      "in": "header",
+      "name": "X-Customer-Idempotent-Identifier",
+      "schema": {
+       "type": "string"
+      },
+      "description": "Use the internal client identifier, provided in the `client_metadata` object when creating the customer in __Create Customer V3__, in place of an `X-Customer-Id` header.\n"
+     },
+     {
+      "in": "header",
+      "name": "X-Customer-Secret",
+      "schema": {
+       "type": "string"
+      },
+      "required": false,
+      "description": "The Bud Customer secret used to encrypt customer data. This is required only if the customer secret is not already stored with Bud."
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "title": "Retrieve Customer Characteristics Response",
+         "type": "object",
+         "required": [
+          "operation_id",
+          "data"
+         ],
+         "properties": {
+          "operation_id": {
+           "type": "string",
+           "enum": [
+            "characteristics_v1_customer_get"
+           ]
+          },
+          "data": {
+           "type": "array",
+           "items": {
+            "title": "Customer Characteristic",
+            "type": "object",
+            "properties": {
+             "type": {
+              "title": "Characteristic Type",
+              "type": "string",
+              "description": "The type of customer characteristic. Currently supported values include:\n- `credit_card`\n- `loan`\n- `overdraft`\n- `saver`\n\nHowever clients integrating with this endpoint should expect more to be added without notice.\n"
+             },
+             "link": {
+              "title": "Characteristic Details Link",
+              "type": "string",
+              "description": "The URL to follow to get detailed Characteristic information about the customer."
+             }
+            }
+           }
+          }
+         }
+        },
+        "examples": {
+         "Multiple Characteristics": {
+          "value": {
+           "operation_id": "characteristics_v1_customer_get",
+           "data": [
+            {
+             "type": "credit_card",
+             "link": "characteristics/v1/customer/credit_card"
+            },
+            {
+             "type": "loan",
+             "link": "characteristics/v1/customer/loan"
+            },
+            {
+             "type": "overdraft",
+             "link": "characteristics/v1/customer/overdraft"
+            },
+            {
+             "type": "saver",
+             "link": "characteristics/v1/customer/saver"
+            }
+           ]
+          }
+         },
+         "No Characteristics": {
+          "value": {
+           "operation_id": "characteristics_v1_customer_get",
+           "data": []
+          }
+         }
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorised request"
+     },
+     "5XX": {
+      "description": "An unexpected error occurred on the server side"
+     }
+    }
+   }
+  },
+  "/characteristics/v1/customer/credit-card": {
+   "get": {
+    "tags": [
+     "Retrieve Customer Characteristics"
+    ],
+    "summary": "Retrieve Customer Characteristics - Credit Card",
+    "description": "Retrieves detailed information for a customer that marks them as a credit card user.\n",
+    "operationId": "characteristics_v1_customer_credit_card_get",
+    "security": [
+     {
+      "OAuth2": []
+     }
+    ],
+    "parameters": [
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/0"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/1"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/2"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/3"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "title": "Get Credit Card Customer Characteristics Response",
+         "type": "object",
+         "required": [
+          "operation_id",
+          "data"
+         ],
+         "properties": {
+          "operation_id": {
+           "type": "string",
+           "enum": [
+            "characteristics_v1_customer_credit_card_get"
+           ]
+          },
+          "data": {
+           "type": "object",
+           "properties": {
+            "credit_card_transactions": {
+             "type": "array",
+             "items": {
+              "$ref": "#/paths/~1characteristics~1v1~1customer~1loan/get/responses/200/content/application~1json/schema/properties/data/properties/loan_transactions/items"
+             }
+            },
+            "credit_card_transaction_totals": {
+             "type": "array",
+             "items": {
+              "$ref": "#/paths/~1characteristics~1v1~1customer~1loan/get/responses/200/content/application~1json/schema/properties/data/properties/loan_transaction_totals/items"
+             }
+            }
+           }
+          }
+         }
+        },
+        "example": {
+         "operation_id": "characteristics_v1_customer_credit_card_get",
+         "data": {
+          "credit_card_transactions": [
+           {
+            "transaction_id": "864a3efc-6104-4dde-99a0-c3d91a8bcecf",
+            "account_id": "ad7d5904-39ab-4736-b726-5792c7a2146e",
+            "credit_debit_indicator": "debit",
+            "description": "CREDIT CARD PAYMENT",
+            "provider": "BankOfBud",
+            "status": "booked",
+            "amount": {
+             "value": "1234.56",
+             "currency": "GBP"
+            },
+            "date_time": "2023-07-03T10:00:00Z",
+            "enrichments": {
+             "categories": {
+              "l1": {
+               "slug": "borrowing_and_loans",
+               "confidence": "0.99"
+              },
+              "l2": {
+               "slug": "credit_cards",
+               "confidence": "0.99"
+              }
+             }
+            }
+           }
+          ],
+          "credit_card_transaction_totals": [
+           {
+            "amount": {
+             "value": "1234.56",
+             "currency": "GBP"
+            },
+            "credit_debit_indicator": "debit"
+           }
+          ]
+         }
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorised request"
+     },
+     "5XX": {
+      "description": "An unexpected error occurred on the server side"
+     }
+    }
+   }
+  },
+  "/characteristics/v1/customer/loan": {
+   "get": {
+    "tags": [
+     "Retrieve Customer Characteristics"
+    ],
+    "summary": "Retrieve Customer Characteristics - Loan",
+    "description": "Retrieves detailed information for a customer that marks them as a loan user.\n",
+    "operationId": "characteristics_v1_customer_loan_get",
+    "security": [
+     {
+      "OAuth2": []
+     }
+    ],
+    "parameters": [
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/0"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/1"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/2"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/3"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "title": "Get Loan Customer Characteristics Response",
+         "type": "object",
+         "required": [
+          "operation_id",
+          "data"
+         ],
+         "properties": {
+          "operation_id": {
+           "type": "string",
+           "enum": [
+            "characteristics_v1_customer_loan_get"
+           ]
+          },
+          "data": {
+           "type": "object",
+           "properties": {
+            "loan_transactions": {
+             "type": "array",
+             "items": {
+              "title": "Customer Characteristic Transaction",
+              "type": "object",
+              "description": "A financial transaction",
+              "required": [
+               "transaction_id",
+               "account_id",
+               "description",
+               "amount",
+               "credit_debit_indicator",
+               "status",
+               "date_time"
+              ],
+              "properties": {
+               "transaction_id": {
+                "type": "string",
+                "description": "Unique identifier for the transaction. May be mutable depending on original ingestion source."
+               },
+               "account_id": {
+                "type": "string",
+                "description": "Identifier for the account associated with the transaction."
+               },
+               "provider": {
+                "type": "string",
+                "description": "Name of the transaction source provider. Optional as it may not have been supplied when using first party data."
+               },
+               "description": {
+                "type": "string",
+                "description": "Description of the transaction."
+               },
+               "credit_debit_indicator": {
+                "type": "string",
+                "description": "Credit/Debit Indicator",
+                "enum": [
+                 "credit",
+                 "debit"
+                ]
+               },
+               "status": {
+                "type": "string",
+                "description": "Status of the transaction. Defaults to booked.",
+                "enum": [
+                 "booked",
+                 "pending"
+                ]
+               },
+               "amount": {
+                "title": "Standard Bud Amount",
+                "type": "object",
+                "description": "The monetary amount.",
+                "required": [
+                 "value",
+                 "currency"
+                ],
+                "properties": {
+                 "value": {
+                  "title": "Monetary Value",
+                  "description": "The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. \n\nExample: `10.98`\n",
+                  "type": "string"
+                 },
+                 "currency": {
+                  "title": "Currency",
+                  "description": "The three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html) of the monetary amount.\n\nExample: `GBP`\n",
+                  "type": "string"
+                 }
+                }
+               },
+               "date_time": {
+                "type": "string",
+                "description": "Date of the transaction compliant with RFC3339."
+               },
+               "enrichments": {
+                "type": "object",
+                "description": "Contextual enrichments associated with a Transaction",
+                "properties": {
+                 "categories": {
+                  "title": "Categories",
+                  "type": "object",
+                  "description": "Categories enrichment associated with a Transaction, as generated by Bud's artificial intelligence models.\nCurrently two levels of category are supported, with `l1` being a coarse-grained category level and `l2` being more refined.\n",
+                  "properties": {
+                   "l1": {
+                    "description": "Level 1 Category",
+                    "title": "Category",
+                    "type": "object",
+                    "required": [
+                     "slug",
+                     "confidence"
+                    ],
+                    "properties": {
+                     "slug": {
+                      "type": "string",
+                      "description": "Unique human readable identifier of the category. Not subject to version control."
+                     },
+                     "confidence": {
+                      "type": "string",
+                      "description": "Degree of belief of correct assignment, expressed as a probability."
+                     }
+                    }
+                   },
+                   "l2": {
+                    "$ref": "#/paths/~1characteristics~1v1~1customer~1loan/get/responses/200/content/application~1json/schema/properties/data/properties/loan_transactions/items/properties/enrichments/properties/categories/properties/l1",
+                    "description": "Level 2 Category"
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            },
+            "loan_transaction_totals": {
+             "type": "array",
+             "items": {
+              "type": "object",
+              "description": "Totals of all included transactions for the specified currency.",
+              "required": [
+               "amount",
+               "credit_debit_indicator"
+              ],
+              "properties": {
+               "amount": {
+                "$ref": "#/paths/~1characteristics~1v1~1customer~1loan/get/responses/200/content/application~1json/schema/properties/data/properties/loan_transactions/items/properties/amount"
+               },
+               "credit_debit_indicator": {
+                "type": "string",
+                "description": "Credit/Debit Indicator",
+                "enum": [
+                 "credit",
+                 "debit"
+                ]
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        },
+        "example": {
+         "operation_id": "characteristics_v1_customer_loan_get",
+         "data": {
+          "loan_transactions": [
+           {
+            "transaction_id": "864a3efc-6104-4dde-99a0-c3d91a8bcecf",
+            "account_id": "ad7d5904-39ab-4736-b726-5792c7a2146e",
+            "credit_debit_indicator": "debit",
+            "description": "CAR LOAN REPAYMENT",
+            "provider": "BankOfBud",
+            "status": "booked",
+            "amount": {
+             "value": "1234.56",
+             "currency": "GBP"
+            },
+            "date_time": "2023-07-03T10:00:00Z",
+            "enrichments": {
+             "categories": {
+              "l1": {
+               "slug": "borrowing_and_loans",
+               "confidence": "0.92"
+              },
+              "l2": {
+               "slug": "vehicle_loan",
+               "confidence": "0.80"
+              }
+             }
+            }
+           }
+          ],
+          "loan_transaction_totals": [
+           {
+            "amount": {
+             "value": "1234.56",
+             "currency": "GBP"
+            },
+            "credit_debit_indicator": "debit"
+           }
+          ]
+         }
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorised request"
+     },
+     "5XX": {
+      "description": "An unexpected error occurred on the server side"
+     }
+    }
+   }
+  },
+  "/characteristics/v1/customer/overdraft": {
+   "get": {
+    "tags": [
+     "Retrieve Customer Characteristics"
+    ],
+    "summary": "Retrieve Customer Characteristics - Overdraft",
+    "description": "Retrieves detailed information for a customer that marks them as an overdraft user.\n",
+    "operationId": "characteristics_v1_customer_overdraft_get",
+    "security": [
+     {
+      "OAuth2": []
+     }
+    ],
+    "parameters": [
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/0"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/1"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/2"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/3"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "title": "Get Overdraft Customer Characteristics Response",
+         "type": "object",
+         "required": [
+          "operation_id",
+          "data"
+         ],
+         "properties": {
+          "operation_id": {
+           "type": "string",
+           "enum": [
+            "characteristics_v1_customer_overdraft_get"
+           ]
+          },
+          "data": {
+           "type": "object",
+           "properties": {
+            "overdraft_transactions": {
+             "type": "array",
+             "items": {
+              "$ref": "#/paths/~1characteristics~1v1~1customer~1loan/get/responses/200/content/application~1json/schema/properties/data/properties/loan_transactions/items"
+             }
+            },
+            "overdraft_transaction_totals": {
+             "type": "array",
+             "items": {
+              "$ref": "#/paths/~1characteristics~1v1~1customer~1loan/get/responses/200/content/application~1json/schema/properties/data/properties/loan_transaction_totals/items"
+             }
+            }
+           }
+          }
+         }
+        },
+        "example": {
+         "operation_id": "characteristics_v1_customer_overdraft_get",
+         "data": {
+          "overdraft_transactions": [
+           {
+            "transaction_id": "864a3efc-6104-4dde-99a0-c3d91a8bcecf",
+            "account_id": "ad7d5904-39ab-4736-b726-5792c7a2146e",
+            "credit_debit_indicator": "debit",
+            "description": "OVERDRAFT FEE",
+            "provider": "BankOfBud",
+            "status": "booked",
+            "amount": {
+             "value": "12.34",
+             "currency": "GBP"
+            },
+            "date_time": "2023-07-03T10:00:00Z",
+            "enrichments": {
+             "categories": {
+              "l1": {
+               "slug": "banking",
+               "confidence": "0.92"
+              },
+              "l2": {
+               "slug": "overdraft_fees",
+               "confidence": "0.80"
+              }
+             }
+            }
+           }
+          ],
+          "overdraft_transaction_totals": [
+           {
+            "amount": {
+             "value": "12.34",
+             "currency": "GBP"
+            },
+            "credit_debit_indicator": "debit"
+           }
+          ]
+         }
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorised request"
+     },
+     "5XX": {
+      "description": "An unexpected error occurred on the server side"
+     }
+    }
+   }
+  },
+  "/characteristics/v1/customer/saver": {
+   "get": {
+    "tags": [
+     "Retrieve Customer Characteristics"
+    ],
+    "summary": "Retrieve Customer Characteristics - Saver",
+    "description": "Retrieves detailed information for a customer that marks them as a saver.\n",
+    "operationId": "characteristics_v1_customer_saver_get",
+    "security": [
+     {
+      "OAuth2": []
+     }
+    ],
+    "parameters": [
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/0"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/1"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/2"
+     },
+     {
+      "$ref": "#/paths/~1characteristics~1v1~1customer/get/parameters/3"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "title": "Get Saver Customer Characteristics Response",
+         "type": "object",
+         "required": [
+          "operation_id",
+          "data"
+         ],
+         "properties": {
+          "operation_id": {
+           "type": "string",
+           "enum": [
+            "characteristics_v1_customer_saver_get"
+           ]
+          },
+          "data": {
+           "type": "object",
+           "properties": {
+            "saver_transactions": {
+             "type": "array",
+             "items": {
+              "$ref": "#/paths/~1characteristics~1v1~1customer~1loan/get/responses/200/content/application~1json/schema/properties/data/properties/loan_transactions/items"
+             }
+            },
+            "saver_transaction_totals": {
+             "type": "array",
+             "items": {
+              "$ref": "#/paths/~1characteristics~1v1~1customer~1loan/get/responses/200/content/application~1json/schema/properties/data/properties/loan_transaction_totals/items"
+             }
+            }
+           }
+          }
+         }
+        },
+        "example": {
+         "operation_id": "characteristics_v1_customer_saver_get",
+         "data": {
+          "saver_transactions": [
+           {
+            "transaction_id": "864a3efc-6104-4dde-99a0-c3d91a8bcecf",
+            "account_id": "ad7d5904-39ab-4736-b726-5792c7a2146e",
+            "credit_debit_indicator": "debit",
+            "description": "SAVINGS",
+            "provider": "BankOfBud",
+            "status": "booked",
+            "amount": {
+             "value": "150.00",
+             "currency": "GBP"
+            },
+            "date_time": "2023-07-03T10:00:00Z",
+            "enrichments": {
+             "categories": {
+              "l1": {
+               "slug": "pensions_savings_and_investments",
+               "confidence": "0.99"
+              },
+              "l2": {
+               "slug": "savings",
+               "confidence": "0.99"
+              }
+             }
+            }
+           }
+          ],
+          "saver_transactions_totals": [
+           {
+            "amount": {
+             "value": "12.34",
+             "currency": "GBP"
+            },
+            "credit_debit_indicator": "debit"
+           }
+          ]
+         }
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorised request"
+     },
+     "5XX": {
+      "description": "An unexpected error occurred on the server side"
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "securitySchemes": {
+   "OAuth2": {
+    "type": "oauth2",
+    "flows": {
+     "clientCredentials": {
+      "tokenUrl": "/v1/oauth/token",
+      "scopes": {}
+     }
+    },
+    "description": "\nAuthentication flow:\n\n1. Perform OAuth2 Client Credentials authentication using API Credentials (`client_id`,`client_secret`) to obtain an `access_token` against `/v1/oauth/token` endpoint,\n2. Use `access_token` as Bearer Authorisation for every other API request,\n3. Include `X-Client-Id` (=client_id) within the header of every API request,\n4. Note that some of the requests may also require `X-Customer-Id` to be provided within the request header.\n\n### Examples\nObtain OAuth2 `access_token` and `refresh_token` using `grant_type=client_credentials` and HTTP Basic auth header\n\n```\ncurl --basic --user {{client_id}}:{{client_secret}} \\\n  -X POST https://api-sandbox.thisisbud.com/v1/oauth/token \\\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\n  -d grant_type=client_credentials\n```\n\nSuccessful response:\n```\n{\n  \"operation_id\": \"oauth_token_post\",\n  \"data\": {\n    \"access_token\": \"dd0c17e3fd6d2ce94aa091257a3ea393b4f9b5cf3d3e998f07dc9826da86ff15\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600,\n    \"refresh_token\": \"fac32cca7559d9f6e8f1dfe9a99c71fa1dcfeb482bedf287d7934d2667ae54b3\"\n  }\n}\n```\n\nRefresh `access_token` token using `refresh_token` against `/v1/oauth/token` endpoint with `grant_type=refresh_token`\n\n```\ncurl -X POST \\\n  https://api-sandbox.thisisbud.com/v1/oauth/token \\\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\n  -H 'X-Client-Id: {{client_id}}' \\\n  -d 'grant_type=refresh_token&refresh_token={{refresh_token}}'\n```\n\nSuccessful response:\n```\n{\n    \"operation_id\": \"oauth_token_post\",\n    \"data\": {\n        \"access_token\": \"cc0c17e3fd6d2ce94aa091257a3ea393b4f9b5cf3d3e998f07dc9826da86ff94\",\n        \"token_type\": \"bearer\",\n        \"expires_in\": 3600,\n        \"refresh_token\": \"ffc30cca7559d9f6e8f1dfe9a99c71fa1dcfeb482bedf287d7934d2667ae54b3\"\n    }\n}\n```\n"
+   }
+  }
+ }
+}
