@@ -1,0 +1,88 @@
+{
+  "existing": {
+    "retrieve_customer_characteristic": {
+      "RETRIEVE_CUSTOMER_CHARACTERISTIC00": {
+        "credit_card_transaction_totals": [],
+        "credit_card_transactions": [],
+        "link": "s66",
+        "loan_transaction_totals": [],
+        "loan_transactions": [],
+        "overdraft_transaction_totals": [],
+        "overdraft_transactions": [],
+        "saver_transaction_totals": [],
+        "saver_transactions": [],
+        "type": "s6d",
+        "id": "RETRIEVE_CUSTOMER_CHARACTERISTIC00"
+      },
+      "RETRIEVE_CUSTOMER_CHARACTERISTIC01": {
+        "credit_card_transaction_totals": [],
+        "credit_card_transactions": [],
+        "link": "sca",
+        "loan_transaction_totals": [],
+        "loan_transactions": [],
+        "overdraft_transaction_totals": [],
+        "overdraft_transactions": [],
+        "saver_transaction_totals": [],
+        "saver_transactions": [],
+        "type": "sd1",
+        "id": "RETRIEVE_CUSTOMER_CHARACTERISTIC01"
+      },
+      "RETRIEVE_CUSTOMER_CHARACTERISTIC02": {
+        "credit_card_transaction_totals": [],
+        "credit_card_transactions": [],
+        "link": "s12e",
+        "loan_transaction_totals": [],
+        "loan_transactions": [],
+        "overdraft_transaction_totals": [],
+        "overdraft_transactions": [],
+        "saver_transaction_totals": [],
+        "saver_transactions": [],
+        "type": "s135",
+        "id": "RETRIEVE_CUSTOMER_CHARACTERISTIC02"
+      }
+    }
+  },
+  "new": {
+    "retrieve_customer_characteristic": {
+      "retrieve_customer_characteristic_ref01": {
+        "credit_card_transaction_totals": [],
+        "credit_card_transactions": [],
+        "link": "s192",
+        "loan_transaction_totals": [],
+        "loan_transactions": [],
+        "overdraft_transaction_totals": [],
+        "overdraft_transactions": [],
+        "saver_transaction_totals": [],
+        "saver_transactions": [],
+        "type": "s199"
+      }
+    }
+  },
+  "requests": {
+    "GET /characteristics/v1/customer": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /characteristics/v1/customer/credit-card": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /characteristics/v1/customer/loan": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /characteristics/v1/customer/overdraft": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /characteristics/v1/customer/saver": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

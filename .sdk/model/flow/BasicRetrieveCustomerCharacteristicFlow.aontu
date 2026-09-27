@@ -1,0 +1,40 @@
+# BasicRetrieveCustomerCharacteristicFlow
+
+main: kit: flow: BasicRetrieveCustomerCharacteristicFlow:
+{
+  entity: "retrieve_customer_characteristic",
+  kind: "basic",
+  name: "BasicRetrieveCustomerCharacteristicFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "retrieve_customer_characteristic_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "retrieve_customer_characteristic_ref01",
+        srcdatavar: "retrieve_customer_characteristic_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-retrieve_customer_characteristic_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRetrieveCustomerCharacteristicFlow"
+}

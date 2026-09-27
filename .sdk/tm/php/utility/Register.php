@@ -1,0 +1,70 @@
+<?php
+declare(strict_types=1);
+
+// BudCharacteristics SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+BudCharacteristicsUtility::setRegistrar(function (BudCharacteristicsUtility $u): void {
+    $u->clean = [BudCharacteristicsClean::class, 'call'];
+    $u->done = [BudCharacteristicsDone::class, 'call'];
+    $u->make_error = [BudCharacteristicsMakeError::class, 'call'];
+    $u->feature_add = [BudCharacteristicsFeatureAdd::class, 'call'];
+    $u->feature_hook = [BudCharacteristicsFeatureHook::class, 'call'];
+    $u->feature_init = [BudCharacteristicsFeatureInit::class, 'call'];
+    $u->fetcher = [BudCharacteristicsFetcher::class, 'call'];
+    $u->make_fetch_def = [BudCharacteristicsMakeFetchDef::class, 'call'];
+    $u->make_context = [BudCharacteristicsMakeContext::class, 'call'];
+    $u->make_options = [BudCharacteristicsMakeOptions::class, 'call'];
+    $u->make_request = [BudCharacteristicsMakeRequest::class, 'call'];
+    $u->make_response = [BudCharacteristicsMakeResponse::class, 'call'];
+    $u->make_result = [BudCharacteristicsMakeResult::class, 'call'];
+    $u->make_point = [BudCharacteristicsMakePoint::class, 'call'];
+    $u->make_spec = [BudCharacteristicsMakeSpec::class, 'call'];
+    $u->make_url = [BudCharacteristicsMakeUrl::class, 'call'];
+    $u->param = [BudCharacteristicsParam::class, 'call'];
+    $u->prepare_auth = [BudCharacteristicsPrepareAuth::class, 'call'];
+    $u->prepare_body = [BudCharacteristicsPrepareBody::class, 'call'];
+    $u->prepare_headers = [BudCharacteristicsPrepareHeaders::class, 'call'];
+    $u->prepare_method = [BudCharacteristicsPrepareMethod::class, 'call'];
+    $u->prepare_params = [BudCharacteristicsPrepareParams::class, 'call'];
+    $u->prepare_path = [BudCharacteristicsPreparePath::class, 'call'];
+    $u->prepare_query = [BudCharacteristicsPrepareQuery::class, 'call'];
+    $u->graphql_body = [BudCharacteristicsGraphql::class, 'body'];
+    $u->graphql_errors = [BudCharacteristicsGraphql::class, 'errors'];
+    $u->result_basic = [BudCharacteristicsResultBasic::class, 'call'];
+    $u->result_body = [BudCharacteristicsResultBody::class, 'call'];
+    $u->result_headers = [BudCharacteristicsResultHeaders::class, 'call'];
+    $u->transform_request = [BudCharacteristicsTransformRequest::class, 'call'];
+    $u->transform_response = [BudCharacteristicsTransformResponse::class, 'call'];
+});

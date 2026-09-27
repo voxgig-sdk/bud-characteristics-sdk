@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>RetrieveCustomerCharacteristic | Characteristics API</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Characteristics API<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/bud-characteristics-sdk">voxgig-sdk/bud-characteristics-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Characteristics API</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a aria-current="page" href="../api/retrieve_customer_characteristic.html">RetrieveCustomerCharacteristic</a><div class="nav-sections"><a class="nav-section" href="#get-characteristicsv1customer">GET /characteristics/v1/customer</a>
+<a class="nav-section" href="#get-characteristicsv1customercredit-card">GET /characteristics/v1/customer/credit-card</a>
+<a class="nav-section" href="#get-characteristicsv1customerloan">GET /characteristics/v1/customer/loan</a>
+<a class="nav-section" href="#get-characteristicsv1customeroverdraft">GET /characteristics/v1/customer/overdraft</a>
+<a class="nav-section" href="#get-characteristicsv1customersaver">GET /characteristics/v1/customer/saver</a></div></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/js.html">JavaScript</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/debug.html">Debug capture</a>
+<a href="../features/idempotency.html">Idempotency</a>
+<a href="../features/metrics.html">Metrics</a>
+<a href="../features/paging.html">Paging</a>
+<a href="../features/ratelimit.html">Rate limiting</a>
+<a href="../features/retry.html">Retry</a>
+<a href="../features/test.html">Test transport</a>
+<a href="../features/timeout.html">Timeout</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="retrievecustomercharacteristic">RetrieveCustomerCharacteristic</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-characteristicsv1customer"><code>/characteristics/v1/customer</code></a></td>
+<td><code>list</code></td>
+<td>OK</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-characteristicsv1customercredit-card"><code>/characteristics/v1/customer/credit-card</code></a></td>
+<td><code>load</code></td>
+<td>OK</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-characteristicsv1customerloan"><code>/characteristics/v1/customer/loan</code></a></td>
+<td><code>load</code></td>
+<td>OK</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-characteristicsv1customeroverdraft"><code>/characteristics/v1/customer/overdraft</code></a></td>
+<td><code>load</code></td>
+<td>OK</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-characteristicsv1customersaver"><code>/characteristics/v1/customer/saver</code></a></td>
+<td><code>load</code></td>
+<td>OK</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">retrieve_customer_characteristics, err := client.RetrieveCustomerCharacteristic(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(retrieve_customer_characteristics)
+retrieve_customer_characteristic, err := client.RetrieveCustomerCharacteristic(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(retrieve_customer_characteristic)
+</code></pre>
+<h3 id="javascript">JavaScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/js.html#set-up-the-client">JavaScript setup</a>, then call the operations:</p>
+<pre><code class="language-js">const retrieve_customer_characteristics = await client.RetrieveCustomerCharacteristic().list()
+const retrieve_customer_characteristic = await client.RetrieveCustomerCharacteristic().load()
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local retrieve_customer_characteristics, err = client:RetrieveCustomerCharacteristic():list()
+local retrieve_customer_characteristic, err = client:RetrieveCustomerCharacteristic():load()
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$retrieve_customer_characteristics = $client-&gt;RetrieveCustomerCharacteristic()-&gt;list();
+$retrieve_customer_characteristic = $client-&gt;RetrieveCustomerCharacteristic()-&gt;load();
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">retrieve_customer_characteristics = client.RetrieveCustomerCharacteristic().list()
+retrieve_customer_characteristic = client.RetrieveCustomerCharacteristic().load()
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const retrieve_customer_characteristics = await client.RetrieveCustomerCharacteristic().list()
+const retrieve_customer_characteristic = await client.RetrieveCustomerCharacteristic().load()
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>credit_card_transaction_totals</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Credit Card Transaction Totals</td>
+</tr>
+<tr>
+<td><code>credit_card_transactions</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Credit Card Transactions</td>
+</tr>
+<tr>
+<td><code>link</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The URL to follow to get detailed Characteristic information about the customer.</td>
+</tr>
+<tr>
+<td><code>loan_transaction_totals</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Loan Transaction Totals</td>
+</tr>
+<tr>
+<td><code>loan_transactions</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Loan Transactions</td>
+</tr>
+<tr>
+<td><code>overdraft_transaction_totals</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Overdraft Transaction Totals</td>
+</tr>
+<tr>
+<td><code>overdraft_transactions</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Overdraft Transactions</td>
+</tr>
+<tr>
+<td><code>saver_transaction_totals</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Saver Transaction Totals</td>
+</tr>
+<tr>
+<td><code>saver_transactions</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Saver Transactions</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The type of customer characteristic.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-characteristicsv1customer" class="operation" data-method="get"><code>GET</code> /characteristics/v1/customer</h3>
+<p>Operation ID: <code>characteristics_v1_customer_get</code>.</p>
+<p>Authentication: oauth2 (<code>OAuth2</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>X-Client-Id</code> | <code>header</code> | <code>string</code> | Yes | The API Client Identifier (Service Application Identifier). |
+| <code>X-Customer-Id</code> | <code>header</code> | <code>string (uuid)</code> | Yes | A unique identifier for a Customer, as registered on Bud's platform. |
+| <code>X-Customer-Idempotent-Identifier</code> | <code>header</code> | <code>string</code> | No | Use the internal client identifier, provided in the <code>client_metadata</code> object when creating the customer in <strong>Create Customer V3</strong>, in place of an <code>X-Customer-Id</code> header. |
+| <code>X-Customer-Secret</code> | <code>header</code> | <code>string</code> | No | The Bud Customer secret used to encrypt customer data. This is required only if the customer secret is not already stored with Bud. |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-ok" class="status" data-status="2xx">200: OK</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].link</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The URL to follow to get detailed Characteristic information about the customer.</td>
+</tr>
+<tr>
+<td><code>data[].type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The type of customer characteristic. Currently supported values include: - <code>credit_card</code> - <code>loan</code> - <code>overdraft</code> - <code>saver</code> However clients integrating with this endpoint should expect more to be added without notice.</td>
+</tr>
+<tr>
+<td><code>operation_id</code></td>
+<td><code>enum: characteristics_v1_customer_get</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorised-request" class="status" data-status="4xx">401: Unauthorised request</h5>
+<h5 id="5xx-an-unexpected-error-occurred-on-the-server-side">5XX: An unexpected error occurred on the server side</h5>
+<h2 id="load">load</h2>
+<h3 id="get-characteristicsv1customercredit-card" class="operation" data-method="get"><code>GET</code> /characteristics/v1/customer/credit-card</h3>
+<p>Operation ID: <code>characteristics_v1_customer_credit_card_get</code>.</p>
+<p>Authentication: oauth2 (<code>OAuth2</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>X-Client-Id</code> | <code>header</code> | <code>string</code> | Yes | The API Client Identifier (Service Application Identifier). |
+| <code>X-Customer-Id</code> | <code>header</code> | <code>string (uuid)</code> | Yes | A unique identifier for a Customer, as registered on Bud's platform. |
+| <code>X-Customer-Idempotent-Identifier</code> | <code>header</code> | <code>string</code> | No | Use the internal client identifier, provided in the <code>client_metadata</code> object when creating the customer in <strong>Create Customer V3</strong>, in place of an <code>X-Customer-Id</code> header. |
+| <code>X-Customer-Secret</code> | <code>header</code> | <code>string</code> | No | The Bud Customer secret used to encrypt customer data. This is required only if the customer secret is not already stored with Bud. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-ok-1" class="status" data-status="2xx">200: OK</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.credit_card_transaction_totals</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.credit_card_transaction_totals[].amount</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>The monetary amount.</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transaction_totals[].amount.currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> of the monetary amount. Example: <code>GBP</code></td>
+</tr>
+<tr>
+<td><code>data.credit_card_transaction_totals[].amount.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. Example: <code>10.98</code></td>
+</tr>
+<tr>
+<td><code>data.credit_card_transaction_totals[].credit_debit_indicator</code></td>
+<td><code>enum: credit, debit</code></td>
+<td>Yes</td>
+<td>Credit/Debit Indicator</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].account_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Identifier for the account associated with the transaction.</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].amount</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>The monetary amount.</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].amount.currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> of the monetary amount. Example: <code>GBP</code></td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].amount.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. Example: <code>10.98</code></td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].credit_debit_indicator</code></td>
+<td><code>enum: credit, debit</code></td>
+<td>Yes</td>
+<td>Credit/Debit Indicator</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].date_time</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date of the transaction compliant with RFC3339.</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Description of the transaction.</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].enrichments</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Contextual enrichments associated with a Transaction</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].enrichments.categories</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Categories enrichment associated with a Transaction, as generated by Bud's artificial intelligence models. Currently two levels of category are supported, with <code>l1</code> being a coarse-grained category level and <code>l2</code> being more refined.</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].enrichments.categories.l1</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Level 1 Category</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].enrichments.categories.l2</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Level 2 Category</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].provider</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name of the transaction source provider. Optional as it may not have been supplied when using first party data.</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].status</code></td>
+<td><code>enum: booked, pending</code></td>
+<td>Yes</td>
+<td>Status of the transaction. Defaults to booked.</td>
+</tr>
+<tr>
+<td><code>data.credit_card_transactions[].transaction_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the transaction. May be mutable depending on original ingestion source.</td>
+</tr>
+<tr>
+<td><code>operation_id</code></td>
+<td><code>enum: characteristics_v1_customer_credit_card_get</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;credit_card_transaction_totals&quot;: [
+      {
+        &quot;amount&quot;: {
+          &quot;currency&quot;: &quot;GBP&quot;,
+          &quot;value&quot;: &quot;1234.56&quot;
+        },
+        &quot;credit_debit_indicator&quot;: &quot;debit&quot;
+      }
+    ],
+    &quot;credit_card_transactions&quot;: [
+      {
+        &quot;account_id&quot;: &quot;ad7d5904-39ab-4736-b726-5792c7a2146e&quot;,
+        &quot;amount&quot;: {
+          &quot;currency&quot;: &quot;GBP&quot;,
+          &quot;value&quot;: &quot;1234.56&quot;
+        },
+        &quot;credit_debit_indicator&quot;: &quot;debit&quot;,
+        &quot;date_time&quot;: &quot;2023-07-03T10:00:00Z&quot;,
+        &quot;description&quot;: &quot;CREDIT CARD PAYMENT&quot;,
+        &quot;enrichments&quot;: {
+          &quot;categories&quot;: {
+            &quot;l1&quot;: {
+              &quot;confidence&quot;: &quot;0.99&quot;,
+              &quot;slug&quot;: &quot;borrowing_and_loans&quot;
+            },
+            &quot;l2&quot;: {
+              &quot;confidence&quot;: &quot;0.99&quot;,
+              &quot;slug&quot;: &quot;credit_cards&quot;
+            }
+          }
+        },
+        &quot;provider&quot;: &quot;BankOfBud&quot;,
+        &quot;status&quot;: &quot;booked&quot;,
+        &quot;transaction_id&quot;: &quot;864a3efc-6104-4dde-99a0-c3d91a8bcecf&quot;
+      }
+    ]
+  },
+  &quot;operation_id&quot;: &quot;characteristics_v1_customer_credit_card_get&quot;
+}
+</code></pre>
+<h5 id="401-unauthorised-request-1" class="status" data-status="4xx">401: Unauthorised request</h5>
+<h5 id="5xx-an-unexpected-error-occurred-on-the-server-side-1">5XX: An unexpected error occurred on the server side</h5>
+<h3 id="get-characteristicsv1customerloan" class="operation" data-method="get"><code>GET</code> /characteristics/v1/customer/loan</h3>
+<p>Operation ID: <code>characteristics_v1_customer_loan_get</code>.</p>
+<p>Authentication: oauth2 (<code>OAuth2</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>X-Client-Id</code> | <code>header</code> | <code>string</code> | Yes | The API Client Identifier (Service Application Identifier). |
+| <code>X-Customer-Id</code> | <code>header</code> | <code>string (uuid)</code> | Yes | A unique identifier for a Customer, as registered on Bud's platform. |
+| <code>X-Customer-Idempotent-Identifier</code> | <code>header</code> | <code>string</code> | No | Use the internal client identifier, provided in the <code>client_metadata</code> object when creating the customer in <strong>Create Customer V3</strong>, in place of an <code>X-Customer-Id</code> header. |
+| <code>X-Customer-Secret</code> | <code>header</code> | <code>string</code> | No | The Bud Customer secret used to encrypt customer data. This is required only if the customer secret is not already stored with Bud. |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-ok-2" class="status" data-status="2xx">200: OK</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.loan_transaction_totals</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.loan_transaction_totals[].amount</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>The monetary amount.</td>
+</tr>
+<tr>
+<td><code>data.loan_transaction_totals[].amount.currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> of the monetary amount. Example: <code>GBP</code></td>
+</tr>
+<tr>
+<td><code>data.loan_transaction_totals[].amount.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. Example: <code>10.98</code></td>
+</tr>
+<tr>
+<td><code>data.loan_transaction_totals[].credit_debit_indicator</code></td>
+<td><code>enum: credit, debit</code></td>
+<td>Yes</td>
+<td>Credit/Debit Indicator</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].account_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Identifier for the account associated with the transaction.</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].amount</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>The monetary amount.</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].amount.currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> of the monetary amount. Example: <code>GBP</code></td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].amount.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. Example: <code>10.98</code></td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].credit_debit_indicator</code></td>
+<td><code>enum: credit, debit</code></td>
+<td>Yes</td>
+<td>Credit/Debit Indicator</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].date_time</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date of the transaction compliant with RFC3339.</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Description of the transaction.</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].enrichments</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Contextual enrichments associated with a Transaction</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].enrichments.categories</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Categories enrichment associated with a Transaction, as generated by Bud's artificial intelligence models. Currently two levels of category are supported, with <code>l1</code> being a coarse-grained category level and <code>l2</code> being more refined.</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].enrichments.categories.l1</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Level 1 Category</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].enrichments.categories.l2</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Level 2 Category</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].provider</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name of the transaction source provider. Optional as it may not have been supplied when using first party data.</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].status</code></td>
+<td><code>enum: booked, pending</code></td>
+<td>Yes</td>
+<td>Status of the transaction. Defaults to booked.</td>
+</tr>
+<tr>
+<td><code>data.loan_transactions[].transaction_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the transaction. May be mutable depending on original ingestion source.</td>
+</tr>
+<tr>
+<td><code>operation_id</code></td>
+<td><code>enum: characteristics_v1_customer_loan_get</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;loan_transaction_totals&quot;: [
+      {
+        &quot;amount&quot;: {
+          &quot;currency&quot;: &quot;GBP&quot;,
+          &quot;value&quot;: &quot;1234.56&quot;
+        },
+        &quot;credit_debit_indicator&quot;: &quot;debit&quot;
+      }
+    ],
+    &quot;loan_transactions&quot;: [
+      {
+        &quot;account_id&quot;: &quot;ad7d5904-39ab-4736-b726-5792c7a2146e&quot;,
+        &quot;amount&quot;: {
+          &quot;currency&quot;: &quot;GBP&quot;,
+          &quot;value&quot;: &quot;1234.56&quot;
+        },
+        &quot;credit_debit_indicator&quot;: &quot;debit&quot;,
+        &quot;date_time&quot;: &quot;2023-07-03T10:00:00Z&quot;,
+        &quot;description&quot;: &quot;CAR LOAN REPAYMENT&quot;,
+        &quot;enrichments&quot;: {
+          &quot;categories&quot;: {
+            &quot;l1&quot;: {
+              &quot;confidence&quot;: &quot;0.92&quot;,
+              &quot;slug&quot;: &quot;borrowing_and_loans&quot;
+            },
+            &quot;l2&quot;: {
+              &quot;confidence&quot;: &quot;0.80&quot;,
+              &quot;slug&quot;: &quot;vehicle_loan&quot;
+            }
+          }
+        },
+        &quot;provider&quot;: &quot;BankOfBud&quot;,
+        &quot;status&quot;: &quot;booked&quot;,
+        &quot;transaction_id&quot;: &quot;864a3efc-6104-4dde-99a0-c3d91a8bcecf&quot;
+      }
+    ]
+  },
+  &quot;operation_id&quot;: &quot;characteristics_v1_customer_loan_get&quot;
+}
+</code></pre>
+<h5 id="401-unauthorised-request-2" class="status" data-status="4xx">401: Unauthorised request</h5>
+<h5 id="5xx-an-unexpected-error-occurred-on-the-server-side-2">5XX: An unexpected error occurred on the server side</h5>
+<h3 id="get-characteristicsv1customeroverdraft" class="operation" data-method="get"><code>GET</code> /characteristics/v1/customer/overdraft</h3>
+<p>Operation ID: <code>characteristics_v1_customer_overdraft_get</code>.</p>
+<p>Authentication: oauth2 (<code>OAuth2</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>X-Client-Id</code> | <code>header</code> | <code>string</code> | Yes | The API Client Identifier (Service Application Identifier). |
+| <code>X-Customer-Id</code> | <code>header</code> | <code>string (uuid)</code> | Yes | A unique identifier for a Customer, as registered on Bud's platform. |
+| <code>X-Customer-Idempotent-Identifier</code> | <code>header</code> | <code>string</code> | No | Use the internal client identifier, provided in the <code>client_metadata</code> object when creating the customer in <strong>Create Customer V3</strong>, in place of an <code>X-Customer-Id</code> header. |
+| <code>X-Customer-Secret</code> | <code>header</code> | <code>string</code> | No | The Bud Customer secret used to encrypt customer data. This is required only if the customer secret is not already stored with Bud. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-ok-3" class="status" data-status="2xx">200: OK</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.overdraft_transaction_totals</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.overdraft_transaction_totals[].amount</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>The monetary amount.</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transaction_totals[].amount.currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> of the monetary amount. Example: <code>GBP</code></td>
+</tr>
+<tr>
+<td><code>data.overdraft_transaction_totals[].amount.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. Example: <code>10.98</code></td>
+</tr>
+<tr>
+<td><code>data.overdraft_transaction_totals[].credit_debit_indicator</code></td>
+<td><code>enum: credit, debit</code></td>
+<td>Yes</td>
+<td>Credit/Debit Indicator</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].account_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Identifier for the account associated with the transaction.</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].amount</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>The monetary amount.</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].amount.currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> of the monetary amount. Example: <code>GBP</code></td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].amount.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. Example: <code>10.98</code></td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].credit_debit_indicator</code></td>
+<td><code>enum: credit, debit</code></td>
+<td>Yes</td>
+<td>Credit/Debit Indicator</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].date_time</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date of the transaction compliant with RFC3339.</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Description of the transaction.</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].enrichments</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Contextual enrichments associated with a Transaction</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].enrichments.categories</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Categories enrichment associated with a Transaction, as generated by Bud's artificial intelligence models. Currently two levels of category are supported, with <code>l1</code> being a coarse-grained category level and <code>l2</code> being more refined.</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].enrichments.categories.l1</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Level 1 Category</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].enrichments.categories.l2</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Level 2 Category</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].provider</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name of the transaction source provider. Optional as it may not have been supplied when using first party data.</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].status</code></td>
+<td><code>enum: booked, pending</code></td>
+<td>Yes</td>
+<td>Status of the transaction. Defaults to booked.</td>
+</tr>
+<tr>
+<td><code>data.overdraft_transactions[].transaction_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the transaction. May be mutable depending on original ingestion source.</td>
+</tr>
+<tr>
+<td><code>operation_id</code></td>
+<td><code>enum: characteristics_v1_customer_overdraft_get</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;overdraft_transaction_totals&quot;: [
+      {
+        &quot;amount&quot;: {
+          &quot;currency&quot;: &quot;GBP&quot;,
+          &quot;value&quot;: &quot;12.34&quot;
+        },
+        &quot;credit_debit_indicator&quot;: &quot;debit&quot;
+      }
+    ],
+    &quot;overdraft_transactions&quot;: [
+      {
+        &quot;account_id&quot;: &quot;ad7d5904-39ab-4736-b726-5792c7a2146e&quot;,
+        &quot;amount&quot;: {
+          &quot;currency&quot;: &quot;GBP&quot;,
+          &quot;value&quot;: &quot;12.34&quot;
+        },
+        &quot;credit_debit_indicator&quot;: &quot;debit&quot;,
+        &quot;date_time&quot;: &quot;2023-07-03T10:00:00Z&quot;,
+        &quot;description&quot;: &quot;OVERDRAFT FEE&quot;,
+        &quot;enrichments&quot;: {
+          &quot;categories&quot;: {
+            &quot;l1&quot;: {
+              &quot;confidence&quot;: &quot;0.92&quot;,
+              &quot;slug&quot;: &quot;banking&quot;
+            },
+            &quot;l2&quot;: {
+              &quot;confidence&quot;: &quot;0.80&quot;,
+              &quot;slug&quot;: &quot;overdraft_fees&quot;
+            }
+          }
+        },
+        &quot;provider&quot;: &quot;BankOfBud&quot;,
+        &quot;status&quot;: &quot;booked&quot;,
+        &quot;transaction_id&quot;: &quot;864a3efc-6104-4dde-99a0-c3d91a8bcecf&quot;
+      }
+    ]
+  },
+  &quot;operation_id&quot;: &quot;characteristics_v1_customer_overdraft_get&quot;
+}
+</code></pre>
+<h5 id="401-unauthorised-request-3" class="status" data-status="4xx">401: Unauthorised request</h5>
+<h5 id="5xx-an-unexpected-error-occurred-on-the-server-side-3">5XX: An unexpected error occurred on the server side</h5>
+<h3 id="get-characteristicsv1customersaver" class="operation" data-method="get"><code>GET</code> /characteristics/v1/customer/saver</h3>
+<p>Operation ID: <code>characteristics_v1_customer_saver_get</code>.</p>
+<p>Authentication: oauth2 (<code>OAuth2</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>X-Client-Id</code> | <code>header</code> | <code>string</code> | Yes | The API Client Identifier (Service Application Identifier). |
+| <code>X-Customer-Id</code> | <code>header</code> | <code>string (uuid)</code> | Yes | A unique identifier for a Customer, as registered on Bud's platform. |
+| <code>X-Customer-Idempotent-Identifier</code> | <code>header</code> | <code>string</code> | No | Use the internal client identifier, provided in the <code>client_metadata</code> object when creating the customer in <strong>Create Customer V3</strong>, in place of an <code>X-Customer-Id</code> header. |
+| <code>X-Customer-Secret</code> | <code>header</code> | <code>string</code> | No | The Bud Customer secret used to encrypt customer data. This is required only if the customer secret is not already stored with Bud. |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-ok-4" class="status" data-status="2xx">200: OK</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.saver_transaction_totals</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.saver_transaction_totals[].amount</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>The monetary amount.</td>
+</tr>
+<tr>
+<td><code>data.saver_transaction_totals[].amount.currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> of the monetary amount. Example: <code>GBP</code></td>
+</tr>
+<tr>
+<td><code>data.saver_transaction_totals[].amount.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. Example: <code>10.98</code></td>
+</tr>
+<tr>
+<td><code>data.saver_transaction_totals[].credit_debit_indicator</code></td>
+<td><code>enum: credit, debit</code></td>
+<td>Yes</td>
+<td>Credit/Debit Indicator</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].account_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Identifier for the account associated with the transaction.</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].amount</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>The monetary amount.</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].amount.currency</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a> of the monetary amount. Example: <code>GBP</code></td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].amount.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The value of the monetary amount. The value is formatted with the number of decimal places for the respective currency. Example: <code>10.98</code></td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].credit_debit_indicator</code></td>
+<td><code>enum: credit, debit</code></td>
+<td>Yes</td>
+<td>Credit/Debit Indicator</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].date_time</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date of the transaction compliant with RFC3339.</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Description of the transaction.</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].enrichments</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Contextual enrichments associated with a Transaction</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].enrichments.categories</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Categories enrichment associated with a Transaction, as generated by Bud's artificial intelligence models. Currently two levels of category are supported, with <code>l1</code> being a coarse-grained category level and <code>l2</code> being more refined.</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].enrichments.categories.l1</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Level 1 Category</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].enrichments.categories.l2</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Level 2 Category</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].provider</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name of the transaction source provider. Optional as it may not have been supplied when using first party data.</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].status</code></td>
+<td><code>enum: booked, pending</code></td>
+<td>Yes</td>
+<td>Status of the transaction. Defaults to booked.</td>
+</tr>
+<tr>
+<td><code>data.saver_transactions[].transaction_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the transaction. May be mutable depending on original ingestion source.</td>
+</tr>
+<tr>
+<td><code>operation_id</code></td>
+<td><code>enum: characteristics_v1_customer_saver_get</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Example response:</p>
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;saver_transactions&quot;: [
+      {
+        &quot;account_id&quot;: &quot;ad7d5904-39ab-4736-b726-5792c7a2146e&quot;,
+        &quot;amount&quot;: {
+          &quot;currency&quot;: &quot;GBP&quot;,
+          &quot;value&quot;: &quot;150.00&quot;
+        },
+        &quot;credit_debit_indicator&quot;: &quot;debit&quot;,
+        &quot;date_time&quot;: &quot;2023-07-03T10:00:00Z&quot;,
+        &quot;description&quot;: &quot;SAVINGS&quot;,
+        &quot;enrichments&quot;: {
+          &quot;categories&quot;: {
+            &quot;l1&quot;: {
+              &quot;confidence&quot;: &quot;0.99&quot;,
+              &quot;slug&quot;: &quot;pensions_savings_and_investments&quot;
+            },
+            &quot;l2&quot;: {
+              &quot;confidence&quot;: &quot;0.99&quot;,
+              &quot;slug&quot;: &quot;savings&quot;
+            }
+          }
+        },
+        &quot;provider&quot;: &quot;BankOfBud&quot;,
+        &quot;status&quot;: &quot;booked&quot;,
+        &quot;transaction_id&quot;: &quot;864a3efc-6104-4dde-99a0-c3d91a8bcecf&quot;
+      }
+    ],
+    &quot;saver_transactions_totals&quot;: [
+      {
+        &quot;amount&quot;: {
+          &quot;currency&quot;: &quot;GBP&quot;,
+          &quot;value&quot;: &quot;12.34&quot;
+        },
+        &quot;credit_debit_indicator&quot;: &quot;debit&quot;
+      }
+    ]
+  },
+  &quot;operation_id&quot;: &quot;characteristics_v1_customer_saver_get&quot;
+}
+</code></pre>
+<h5 id="401-unauthorised-request-4" class="status" data-status="4xx">401: Unauthorised request</h5>
+<h5 id="5xx-an-unexpected-error-occurred-on-the-server-side-4">5XX: An unexpected error occurred on the server side</h5>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>
